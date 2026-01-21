@@ -1,4 +1,5 @@
 #include <iostream>
+#include "pch.h"
 #include "LinkedList.h"
 #include <sstream>
 

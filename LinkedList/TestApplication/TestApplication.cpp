@@ -1,7 +1,9 @@
+// TestApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
 
-#include "LinkedList.h"
-#include "DoublyLinkedList.h"
+#include "Lists.h"
 
 void testList(List& list)
 {
@@ -95,3 +97,4 @@ int main()
     }
 
 }
+
