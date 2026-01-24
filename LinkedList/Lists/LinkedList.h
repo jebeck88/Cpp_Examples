@@ -64,4 +64,11 @@ public:
 
 	// @override
 	virtual std::string print() const;
+
+private:
+	// No Copies
+	LinkedList(const LinkedList& other) = delete;
+	LinkedList& operator=(const LinkedList& other) = delete;
+	LinkedList(const LinkedList&& other) = delete;
+	LinkedList&& operator=(const LinkedList&& other) = delete;
 };

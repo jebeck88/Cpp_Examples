@@ -149,40 +149,61 @@ void DoublyLinkedList::add(int index, const std::string& value)
 
 void DoublyLinkedList::remove(int index)
 {
-	// Advance to the node to remove
-	int i = 0;
-	auto spNode = spHead;
-	while (spNode && i++ < index)
+	// If index is 0, removeFront
+	if (index == 0)
 	{
-		spNode = spNode->spNext;
+		removeFront();
 	}
 
-	// Remove the node
-	if (spNode)
+	// If index >= size-1, removeBack
+	else if (index >= size() - 1)
 	{
-		// Get handles to the predecessor and successor
-		auto spPredecessor = spNode->spPrev;
-		auto spSuccesor = spNode->spNext;
+		removeBack();
+	}
 
-		// Wire up the predecessor to the successor
-		if (spPredecessor)
+	// Otherwise, remove in the middle
+	else
+	{
+		// Advance to the node to remove
+		int i = 0;
+		auto spNode = spHead;
+		while (spNode && i++ < index)
 		{
-			spPredecessor->spNext = spSuccesor;
+			spNode = spNode->spNext;
 		}
 
-		if (spSuccesor)
+		// Remove the node
+		if (spNode)
 		{
-			spSuccesor->spPrev = spPredecessor;
+			// Get handles to the predecessor and successor
+			auto spPredecessor = spNode->spPrev;
+			auto spSuccesor = spNode->spNext;
+
+			// Wire up the predecessor to the successor
+			if (spPredecessor)
+			{
+				spPredecessor->spNext = spSuccesor;
+			}
+
+			if (spSuccesor)
+			{
+				spSuccesor->spPrev = spPredecessor;
+			}
+
+			// Clear out node's pointers
+			spNode->spNext.reset();
+			spNode->spPrev.reset();
 		}
-		
-		// Clear out node's pointers
-		spNode->spNext.reset();
-		spNode->spPrev.reset();
 	}
 }
 
 const std::string DoublyLinkedList::get(int index) const
 {
+	if (index < 0 || index > size() - 1)
+	{
+		throw std::invalid_argument("Index out of range");
+	}
+
 	std::string result = "";
 	int i = 0;
 	auto spNode = spHead;
