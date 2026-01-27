@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\work\GitHub_Root\Cpp_Examples\Animals\Animals;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\work\GitHub_Root\Cpp_Examples\Animals\x64\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>%GITHUB_ROOT%\Cpp_Examples\Animals\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,7 +109,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\work\GitHub_Root\Cpp_Examples\Animals\Animals;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%GITHUB_ROOT%\Cpp_Examples\Animals\Animals;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
