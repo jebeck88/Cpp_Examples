@@ -18,13 +18,13 @@ public:
 
 public:
 	/** @override */
-	virtual const std::string& name() const;
+	virtual const std::string& name() const override;
 
 	/** @override */
-	virtual void rename(const std::string& newName);
+	virtual void rename(const std::string& newName) override;
 
 	/** @override */
-	virtual std::string sayHello() const;
+	virtual std::string sayHello() const override final;
 
 private:
 	std::string m_strName;

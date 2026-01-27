@@ -15,7 +15,7 @@ public:
 
 public:
 	// @Override
-	virtual const std::string& makeSound() const;
+	virtual const std::string& makeSound() const override;
 
 private:
 	static const std::string s_strNoise;
