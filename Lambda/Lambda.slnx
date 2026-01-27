@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Lambda/Lambda.vcxproj" Id="213d0c3a-edd6-429b-abd7-567004008568" />
+</Solution>

@@ -50,5 +50,16 @@ int main()
         [](int x) {return x % 13 == 0; });
     std::cout << "Lambdas: " << threeCount << " are divisible by 3. " << thirteenCount << " are divisible by thirteen" << std::endl;
 
+    // Count the elements that are divisible by 3 and 13 via a simpler lambda
+    threeCount = 0;
+    thirteenCount = 0;
+    std::for_each(v.cbegin(), v.cend(),
+        [&threeCount, &thirteenCount](int x) 
+        {   
+            if (x % 3 == 0) ++threeCount;
+            if (x % 13 == 0) ++thirteenCount;
+        });
+    std::cout << "SimplerL Lambda: " << threeCount << " are divisible by 3. " << thirteenCount << " are divisible by thirteen" << std::endl;
+
 
 }
