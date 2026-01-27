@@ -33,42 +33,42 @@ public:
 
 public:
 	// @override
-	virtual void addFront(const std::string& value);
+	virtual void addFront(const std::string& value) override;
 
 	// @override
-	virtual void addBack(const std::string& value);
+	virtual void addBack(const std::string& value) override;
 
 	// @override
-	virtual void add(int index, const std::string& value);
+	virtual void add(int index, const std::string& value) override;
 
 	// @override
-	virtual void removeFront();
+	virtual void removeFront() override;
 
 	// @override
-	virtual void removeBack();
+	virtual void removeBack() override;
 
 	// @override
-	virtual void remove(int index);
+	virtual void remove(int index) override;
 
 	// @override
-	virtual void clear();
+	virtual void clear() override;
 
 	// @override
-	virtual bool isEmpty() const;
+	virtual bool isEmpty() const override;
 
 	// @override
-	virtual int size() const;
+	virtual int size() const override;
 
 	// @override
-	virtual const std::string get(int index) const;
+	virtual const std::string get(int index) const override;
 
 	// @override
-	virtual std::string print() const;
+	virtual std::string print() const override;
 
 private:
 	// No Copies
 	LinkedList(const LinkedList& other) = delete;
 	LinkedList& operator=(const LinkedList& other) = delete;
-	LinkedList(const LinkedList&& other) = delete;
-	LinkedList&& operator=(const LinkedList&& other) = delete;
+	LinkedList(LinkedList&& other) = delete;
+	LinkedList& operator=(LinkedList&& other) = delete;
 };
